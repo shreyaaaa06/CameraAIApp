@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Original Material Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- Core Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Professional Camera App Theme -->
+    <color name="camera_background">#FF0A0A0A</color>
+    <color name="surface_dark">#FF1A1A1A</color>
+    <color name="surface_medium">#FF2A2A2A</color>
+    <color name="surface_light">#FF3A3A3A</color>
+
+    <!-- AI & Education Mode Colors -->
+    <color name="ai_accent">#FF6C5CE7</color>
+    <color name="ai_accent_light">#FF9B59B6</color>
+    <color name="ai_gradient_start">#FF6C5CE7</color>
+    <color name="ai_gradient_end">#FF00D4FF</color>
+    <color name="education_mode">#FF6C5CE7</color>
+    <color name="education_mode_light">#8B6C5CE7</color>
+
+    <!-- Control Colors -->
+    <color name="active_control">#FFFF9500</color>
+    <color name="inactive_control">#80FFFFFF</color>
+    <color name="control_bg">#44FFFFFF</color>
+    <color name="control_border">#22FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#CCFFFFFF</color>
+    <color name="text_tertiary">#80FFFFFF</color>
+    <color name="text_accent">#FF6C5CE7</color>
+
+    <!-- UI Element Colors -->
+    <color name="suggestion_card_bg">#DD1A1A1A</color>
+    <color name="suggestion_text">#E6FFFFFF</color>
+    <color name="capture_button">#FFFFFFFF</color>
+    <color name="capture_ring">#CCFFFFFF</color>
+
+    <!-- Mode Colors -->
+    <color name="photo_mode">#FF4CAF50</color>
+    <color name="video_mode">#FFF44336</color>
+    <color name="portrait_mode">#FF9C27B0</color>
+    <color name="night_mode">#FF3F51B5</color>
+
+    <!-- Status Colors -->
+    <color name="recording">#FFF44336</color>
+    <color name="processing">#FFFF9800</color>
+    <color name="ready">#FF4CAF50</color>
+
+    <!-- Overlay Colors -->
+    <color name="overlay_dark">#AA000000</color>
+    <color name="overlay_medium">#66000000</color>
+    <color name="overlay_light">#33000000</color>
+
+    <!-- Legacy Colors (kept for compatibility) -->
+    <color name="normal_mode">#FF424242</color>
+    <color name="mode_active">#FFFF9500</color>
+    <color name="mode_inactive">#80FFFFFF</color>
+    <color name="zoom_chip_active">#FFFFFFFF</color>
+    <color name="zoom_chip_inactive">#50FFFFFF</color>
+</resources>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/camera_background"
+    tools:context=".MainActivity">
+
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/modeCarousel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:scaleType="fillCenter" />
+
+    <!-- Top Controls Bar (Minimal overlay) -->
+    <LinearLayout
+        android:id="@+id/topControlsBar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="@color/overlay_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Flash Toggle -->
+        <ImageButton
+            android:id="@+id/flashToggle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circular_button_bg"
+            android:src="@drawable/ic_flash_off"
+            android:contentDescription="Flash"
+            app:tint="@color/text_primary" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- Settings -->
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/circular_button_bg"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="Settings"
+            app:tint="@color/text_primary" />
+
+        <!-- Camera Switch -->
+        <ImageButton
+            android:id="@+id/cameraSwitchButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circular_button_bg"
+            android:src="@drawable/ic_camera_switch"
+            android:contentDescription="Switch Camera"
+            app:tint="@color/text_primary" />
+
+    </LinearLayout>
+
+    <!-- Focus Indicator (appears on tap) -->
+    <View
+        android:id="@+id/focusIndicator"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/focus_indicator"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/cameraPreview"
+        app:layout_constraintStart_toStartOf="@+id/cameraPreview" />
+
+    <!-- Mode Carousel -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/modeCarousel"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="8dp"
+        android:background="@color/overlay_light"
+        app:layout_constraintBottom_toTopOf="@+id/bottomControlsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Bottom Controls -->
+    <LinearLayout
+        android:id="@+id/bottomControlsLayout"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@color/overlay_medium"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Last Photo Thumbnail -->
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp">
+
+            <ImageView
+                android:id="@+id/lastPhotoThumbnail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/thumbnail_bg"
+                android:contentDescription="Gallery"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_image_placeholder" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/thumbnail_border" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- Capture Button -->
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp">
+
+            <!-- Outer ring -->
+            <View
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/capture_button_outer" />
+
+            <!-- Inner button -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/captureButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:contentDescription="Capture"
+                app:backgroundTint="@color/capture_button"
+                app:borderWidth="0dp"
+                app:elevation="0dp"
+                app:fabSize="normal" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- AI Help Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/aiHelpButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="AI"
+            android:textSize="12sp"
+            android:textColor="@color/text_primary"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:backgroundTint="@color/ai_accent"
+            app:cornerRadius="24dp"
+            style="@style/Widget.Material3.Button.UnelevatedButton" />
+
+    </LinearLayout>
+
+    <!-- Zoom Slider (appears when pinching or zooming) -->
+    <LinearLayout
+        android:id="@+id/zoomSliderContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@drawable/zoom_slider_bg"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/modeCarousel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/zoomValueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.0x"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            android:fontFamily="monospace" />
+
+        <SeekBar
+            android:id="@+id/zoomSeekBar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="@color/text_primary"
+            android:thumbTint="@color/text_primary" />
+
+    </LinearLayout>
+
+    <!-- AI Suggestions Overlay -->
+    <FrameLayout
+        android:id="@+id/aiSuggestionsOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/modeCarousel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topControlsBar">
+
+        <!-- AI Suggestions will be added programmatically here -->
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- External files directory for camera photos -->
+    <external-files-path
+        name="camera_images"
+        path="Pictures/CameraApp/" />
+
+    <!-- Internal files directory as fallback -->
+    <files-path
+        name="internal_files"
+        path="." />
+
+    <!-- External storage for older Android versions -->
+    <external-path
+        name="external_files"
+        path="." />
+</paths>
